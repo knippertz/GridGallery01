@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500&display=swap');
+
+main {
+    margin: 3vmin;
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    gap: .5em;
+    justify-content: center;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+article {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: top 1s ease, opacity .3s ease-in;
+    opacity: 0;
+}
+
+article:hover .overlay {
+    top: 0%;
+    opacity: .5;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+}
+
+img {
+    display: block;
+    width: max-content;
+}
+
+@media (max-width: 1300px) {
+    main {
+        grid-template-columns: repeat(2, 400px);
+    }
+}
+
+@media (max-width: 950px) {
+    main {
+        grid-template-columns: 400px;
+    }
+}
